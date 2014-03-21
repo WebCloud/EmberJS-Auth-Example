@@ -1,7 +1,7 @@
-mamamia2
+EmberJS Authentication example, through an Rails API
 ========
 
-Before running:
+Instructions:
 
-* bundle && rake db:migrate
-* rails s
+1. bundle && rake db:migrate
+2. rails s
