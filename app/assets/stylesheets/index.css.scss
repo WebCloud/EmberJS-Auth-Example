@@ -1,0 +1,33 @@
+/* index */
+.promo{
+  text-align: center;
+  margin-bottom:3rem;
+
+  .promo-text{
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 2rem;
+
+    .promo-content{
+      font-size: 3rem;
+      margin-bottom: 3rem;
+
+      b{
+        display: block;
+        font-size: 6rem;
+        line-height: 7rem;
+      }
+    }
+    .actions{
+      a{
+        vertical-align: middle;
+        display: inline-block;
+        font-size: 2rem;
+      }
+      span{
+        display: inline;
+        margin: 0 1rem;
+      }
+    }
+  }
+}

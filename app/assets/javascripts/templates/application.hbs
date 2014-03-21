@@ -1,0 +1,72 @@
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      {{#if isAuthenticated}}
+        {{#link-to 'secret' class="navbar-brand text-hide"}}Emberjs Authentication example{{/link-to}}
+      {{else}}
+        <a class="navbar-brand text-hide" href="#">Emberjs Authentication example</a>
+      {{/if}}
+    </div>
+    <div class="navbar-collapse collapse">
+      {{#if isAuthenticated}}
+        <ul class="nav navbar-nav navbar-left">
+          <li><a href="#"><span class="glyphicon glyphicon-user"></span> {{currentUser.username}} <i class="fa fa-2x fa-gift"><span class="badge">2</span></i></a></li>
+          {{#link-to 'sessions.index' tagName="li" href=false bubbles=false}}
+            {{#link-to 'sessions.index' bubbles=false}}
+              <span class="glyphicon glyphicon-usd"></span> Some special item
+              {{#link-to 'sessions.index' tagName="span" href=false class="badge badge-action"}}click here{{/link-to}}
+            {{/link-to}}
+          {{/link-to}}
+          <li><a href="#"><span class="badge">2</span> Item</a></li>
+          <li><a href="#"><i class="fa fa-users"></i> Item</a></li>
+        </ul>
+      {{else}}
+        {{#link-to 'users.signup' class="btn btn-info navbar-btn pull-left"}}SIGN UP{{/link-to}}
+        <ul class="nav navbar-nav navbar-left">
+          <li class="divider"></li>
+          {{#link-to 'sessions.index' tagName="li" href=false}}{{#link-to 'sessions.index' bubbles=false}}LOGIN{{/link-to}}{{/link-to}}
+        </ul>
+      {{/if}}
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#">STATIC</a></li>
+        <li><a href="#">STATIC</a></li>
+        {{#if isAuthenticated}}<li><a href="#" {{action 'logout'}}>Logout</a></li>{{/if}}
+      </ul>
+      <ul class="nav navbar-nav navbar-absolute-top">
+        <li class="dropdown">
+          <a id="dLabel" role="button" data-toggle="dropdown" data-target="#">
+            English <span class="caret"></span>
+          </a>
+          <ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="dLabel">
+            <li><a href="#"><i class="fa fa-flag fa-fw"></i> English</a></li>
+            <li><a href="#"><i class="fa fa-flag fa-fw"></i> Spanish</a></li>
+            <li><a href="#"><i class="fa fa-flag fa-fw"></i> French</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div>
+</div>
+
+<div class="container">
+
+  {{outlet}}
+
+  <div class="footer well well-sm">
+    <ul class="nav nav-pills nav-justified">
+      <li><a href="#">NAV</a></li>
+      <li><a href="#">NAV</a></li>
+      <li><a href="#">NAV</a></li>
+      <li><a href="#">NAV</a></li>
+      <li><a href="#">NAV</a></li>
+      <li><a href="#">NAV</a></li>
+      <li><a href="#">NAV</a></li>
+    </ul>
+  </div>
+</div>

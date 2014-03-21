@@ -1,0 +1,131 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require signup
+ *= require index
+ *= require datepicker3
+ *= require_tree .
+ */
+@import "font-awesome";
+@import "bootstrap";
+/* Move down content because we have a fixed navbar that is 50px tall */
+body {
+  min-height: 900px;
+  padding-top: 140px;
+}
+
+.form-horizontal .form-group {
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+.navbar{
+  .container{
+    padding: 0.5rem 0 2.2rem;
+  }
+
+  .navbar-header{
+    margin-right: 1rem;
+    position: relative;
+    width: 129px;
+    height: 70px;
+
+    .navbar-brand{
+      background: url(/assets/emberjs-logo.png) no-repeat;
+      width: 129px;
+      height: 116px;
+      margin-left: 0;
+      position: absolute;
+      top: -13px;
+      z-index: 9;
+      background-size: contain;
+    }
+  }
+
+  .navbar-collapse{
+    vertical-align: middle;
+    padding-top: 21px;
+    position: relative;
+  }
+
+  .navbar-left{
+    margin-left: 1rem;
+
+    li:hover:after,li.active:after {
+      content: " ";
+      display: table;
+      background: url(/assets/current-item.png) no-repeat bottom;
+      width: 100%;
+      height: 11px;
+      position: absolute;
+      bottom: -23px;
+    }
+
+    .fa{
+      position: relative;
+      &.fa-2x{ font-size:1.3em; }
+      .badge{
+        position:absolute;
+        top: -6px;
+        right: -10px;
+        font-size: 1.1rem;
+        padding: 3px 5px;
+      }
+    }
+
+    .badge.badge-action{
+      background-color: #FFF;
+      border:1px solid #CCC;
+      font-size:1.1rem;
+      padding: .3rem 1rem;
+      color:#777;
+      font-weight:normal;
+
+      &:hover{
+        color:#333;
+        background-color:transparent;
+      }
+      &:active{
+        background-color: #EBEBEB;
+        border-color: #ADADAD;
+        -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+        box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+      }
+    }
+  }
+
+  .navbar-absolute-top{
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    li > a{
+      padding: 0rem 1rem;
+      font-size: 1rem;
+      margin-right: 0.5rem;
+    }
+
+    .dropdown a{
+      cursor: pointer;
+      margin-right:0;
+    }
+  }
+
+  .btn-info{
+    background-color: #555;
+    border-color: #ADADAD;
+
+    &.active{
+      background-color: #39B3D7;
+      border-color: #269ABC;
+    }
+  }
+}

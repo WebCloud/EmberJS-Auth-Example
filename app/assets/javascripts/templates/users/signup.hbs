@@ -1,0 +1,48 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h2>Register</h2>
+  </div>
+
+  <div class="panel-body">
+    <form class="form-horizontal form-500" {{action "createUser" on="submit"}}>
+      <div class="row">
+        <label>Name</label><br/>
+        <div class="col-xs-6">
+          {{input type="text" value=firstName class="form-control" placeholder="First name"}}
+        </div>
+        <div class="col-xs-6">
+          {{input type="text" value=lastName class="form-control" placeholder="Last name"}}
+        </div>
+      </div>
+      <div {{bind-attr class=":form-group :controls errors.email:error"}}>
+        <label>Email Address</label>
+        {{input type="email" value=email class="form-control" placeholder="exempe@email.com"}}
+        <small class="below">{{errors.email}}</small>
+      </div>
+
+      <div {{bind-attr class=":form-group :controls errors.username:error"}}>
+        <label>Username</label>
+        {{input type="text" value=username class="form-control" placeholder="Desired Username"}}
+        <small class="below">{{errors.username}}</small>
+      </div>
+
+      <div {{bind-attr class=":form-group :controls errors.password:error"}}>
+        <label>Password</label>
+        {{input type="password" value=password class="form-control" placeholder="Password"}}
+        <small class="below">{{errors.password}}</small>
+      </div>
+
+      <div {{bind-attr class=":form-group :controls errors.password_confirmation:error"}}>
+        <label>Confirm Password</label>
+        {{input type="password" value=password_confirmation class="form-control" placeholder="Repeat your password"}}
+        <small class="below">{{errors.password_confirmation}}</small>
+      </div>
+
+      <div class="form-group input-group date">
+        <input type="text" class="form-control" placeholder="Choose a date"><span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span>
+      </div>
+
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+</div>
