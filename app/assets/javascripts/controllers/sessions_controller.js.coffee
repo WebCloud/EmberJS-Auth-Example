@@ -9,8 +9,8 @@ Auth.SessionsController = Ember.Controller.extend
     return
   ,
   attemptedTransition: null,
-  token: Ember.$.cookie('access_token'),
-  currentUser: Ember.$.cookie('auth_user'),
+  token:               Ember.$.cookie('access_token'),
+  currentUser:         Ember.$.cookie('auth_user'),
   tokenChanged: (()->
     if Ember.isEmpty(@get('token'))
       Ember.$.removeCookie('access_token')
@@ -23,32 +23,36 @@ Auth.SessionsController = Ember.Controller.extend
   reset:()->
     @setProperties
       username_or_email: null,
-      password: null,
-      token: null,
-      currentUser: null
+      password:          null,
+      token:             null,
+      currentUser:       null
     Ember.$.ajaxSetup
       headers: { 'Authorization': 'Bearer none' }
     return
   ,
   actions:
     loginUser: ()->
-      data = @getProperties('username_or_email', 'password')
+      data           = @getProperties('username_or_email', 'password')
       attemptedTrans = @get('attemptedTransition')
 
       @setProperties
         username_or_email: null,
-        password: null
+        password:          null
+
       Ember.$.post('/session', data).then((response)=>
         Ember.$.ajaxSetup
           headers: { 'Authorization': 'Bearer ' + response.api_key.access_token }
-        key = @get('store').createRecord('apiKey',{accessToken: response.api_key.access_token})
 
-        @store.find('user',response.api_key.user_id).then((user)=>
+        key = @get('store').createRecord('apiKey', {accessToken: response.api_key.access_token})
+
+        @store.find('user', response.api_key.user_id).then((user)=>
           @setProperties
-            token:response.api_key.access_token,
-            currentUser:user.getProperties('username','name','email')
+            token:       response.api_key.access_token,
+            currentUser: user.getProperties('username','name','email')
+
           key.set('user', user)
           key.save()
+
           user.get('apiKeys').content.push(key)
 
           if attemptedTrans

@@ -1,6 +1,4 @@
 Auth.ApplicationAdapter = DS.RESTAdapter.extend()
-  # host: 'http://localhost:3000'
-  # headers: {}
 
 Auth.ApplicationAdapter.reopen
   pathForType: (type)->

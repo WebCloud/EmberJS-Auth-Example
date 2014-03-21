@@ -12,13 +12,7 @@
 
 # for more details see: http://emberjs.com/guides/application/
 window.Auth = Ember.Application.create
-  LOG_TRANSITIONS: true,
+  LOG_TRANSITIONS:          true,
   LOG_TRANSITIONS_INTERNAL: true
 
 $.cookie.json = true
-
-$(()->
-  $('.input-group.date').datepicker
-    startView: 2,
-    autoclose: true
-)

@@ -6,7 +6,7 @@ Auth.Router.map ()->
   )
   @resource('users', ()->
     @route('signup')
-    @route('user',{path:'/user/:user_id'})
+    @route('user', { path:'/user/:user_id' })
     return
   )
   @route('secret')
