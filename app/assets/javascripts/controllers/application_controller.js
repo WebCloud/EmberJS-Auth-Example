@@ -2,7 +2,7 @@
 
 Auth.ApplicationController = Ember.Controller.extend({
   // requires the sessions controller
-  needs:           'sessions'],
+  needs:           ['sessions'],
 
   // creates a computed property called currentUser that will be
   // binded on the curretUser of the sessions controller and will return its value

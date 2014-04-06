@@ -10,11 +10,11 @@ Auth.UsersSignupController = Ember.Controller.extend({
       _this = this;
 
       // get the data from the form
-      data = this.getProperties('firstName'
-                                'lastName'
-                                'email'
-                                'username'
-                                'password'
+      data = this.getProperties('firstName',
+                                'lastName',
+                                'email',
+                                'username',
+                                'password',
                                 'password_confirmation');
 
       // compile the firstName & lastName into a single name property
