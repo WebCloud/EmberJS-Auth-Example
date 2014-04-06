@@ -1,6 +1,6 @@
-# for more details see: http://emberjs.com/guides/models/defining-models/
+// for more details see: http://emberjs.com/guides/models/defining-models/
 
-Auth.User = DS.Model.extend
+Auth.User = DS.Model.extend({
   name:                  DS.attr('string'),
   email:                 DS.attr('string'),
   username:              DS.attr('string'),
@@ -8,3 +8,4 @@ Auth.User = DS.Model.extend
   password_confirmation: DS.attr('string'),
   apiKeys:               DS.hasMany('apiKey'),
   errors:                {}
+});
