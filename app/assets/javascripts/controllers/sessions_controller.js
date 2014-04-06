@@ -64,8 +64,6 @@ Auth.SessionsController = Ember.Controller.extend({
 
       // send a POST request to the /sessions api with the form data
       Ember.$.post('/session', data).then(function(response) {
-          var key;
-
           // set the ajax header with the returned access_token object
           Ember.$.ajaxSetup({
             headers: {
@@ -74,7 +72,7 @@ Auth.SessionsController = Ember.Controller.extend({
           });
 
           // create a apiKey record on the local storage based on the returned object
-          key = _this.get('store').createRecord('apiKey', {
+          var key = _this.get('store').createRecord('apiKey', {
             accessToken: response.api_key.access_token
           });
 
