@@ -1,6 +1,6 @@
-# For more information see: http://emberjs.com/guides/routing/
+// For more information see: http://emberjs.com/guides/routing/
 
-# create a base object for any authentication protected route with the required verifications
+// create a base object for any authentication protected route with the required verifications
 Auth.AuthenticatedRoute = Ember.Route.extend({
   // verify if the token property of the sessions controller is set before continuing with the request
   // if it is not, redirect to the login route (sessions)
