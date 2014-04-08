@@ -8,4 +8,4 @@ Instructions:
 
 
 # Detailed article about this example
-[Ember.js Authentication - the right way](http://webcloud.github.io/blog/2014/04/07/emberjs-authentication-the-right-way/)
+[Ember.js Authentication - the right way (Javascript version)](http://webcloud.github.io/blog/2014/04/07/emberjs-authentication-the-right-way-javascript-version/)
