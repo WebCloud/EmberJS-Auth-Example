@@ -20,6 +20,7 @@ Auth.AuthenticatedRoute = Ember.Route.extend
     error: (reason, transition)->
       # if the HTTP status is 401 (unauthorised), redirect to the login page
       if (reason.status is 401)
+        @controllerFor('sessions').reset()
         @redirectToLogin(transition)
       else
         console.log('unknown problem')
